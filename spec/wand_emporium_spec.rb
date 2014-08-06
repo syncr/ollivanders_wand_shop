@@ -3,8 +3,10 @@ require 'wizard'
 require 'wand'
 
 describe Wizard do 
-
-
+  it 'initializes Wizard objects' do
+    sample_wizard = Wizard.new("Maple","Griffin","14")
+    sample_wizard.should be_an_instance_of Wizard
+  end 
 end
 
 
