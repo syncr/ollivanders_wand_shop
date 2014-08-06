@@ -10,3 +10,4 @@ class Wand
     # save
   end
 end
+#empty line for GIT

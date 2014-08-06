@@ -1,10 +1,17 @@
 class Wizard
-  attr_accessor(:wisdom, :intelligence, :alignment)
+  attr_accessor(:wisdom, :intelligence, :honesty)
 
-  def initialize(wisdom, intelligence, alignment)
+  def initialize(wisdom, intelligence, honesty)
     @wisdom = wisdom #instance variable
     @intelligence = intelligence
-    @alignment = alignment
+    @honesty = honesty
     # save
   end
+
+  def calculate_wisdom(color)
+    @wisdom = color.sum
+  end
+
 end 
+
+# print Wizard.calculate_wisdom("Yellow")
