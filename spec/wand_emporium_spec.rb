@@ -4,14 +4,20 @@ require 'wand'
 
 describe Wizard do 
   it 'initializes Wizard objects' do
-    sample_wizard = Wizard.new(10,10,10)
+    sample_wizard = Wizard.new("Mikey")
     expect(sample_wizard).to be_an_instance_of Wizard
   end 
 
   it 'calculates wisdom' do
-    sample_wizard = Wizard.new("Yellow", 10, 10)
+    sample_wizard = Wizard.new("Mikey")
     expect(sample_wizard.calculate_wisdom("Yellow")).to eq(636)
   end
+
+  it 'calculates intelligence' do
+    sample_wizard = Wizard.new("Mikey")
+    expect(sample_wizard.calculate_intelligence("Yellow")).to eq(636)
+  end
+
 end
 
 
