@@ -1,30 +1,37 @@
 class Wizard
-  attr_accessor(:name)
-
   def initialize(name)
     @name = name
-    # @wisdom = wisdom #instance variable
-    # @intelligence = intelligence
-    # @honesty = honesty
-    # save
+    @wisdom
+    @intelligence
+    @loyalty
   end
 
+  def Wizard.score
+    @score 
+  end
 
-  # def self.create(name, wisdom, intelligence, honesty)
-  #   wizard = Wizard.new(name, nil, nil, nil)
-    
-  # end
+  def Wizard.wisdom
+    @wisdom
+  end
 
-  def calculate_wisdom(wisdom_input)
+  def Wizard.intelligence
+    @intelligence 
+  end
+
+  def Wizard.loyalty
+    @loyalty
+  end
+
+  def Wizard.calculate_wisdom(wisdom_input)
     @wisdom = wisdom_input.sum
   end
 
-  def calculate_intelligence(intelligence_input)
+  def Wizard.calculate_intelligence(intelligence_input)
     @intelligence = intelligence_input.sum
   end
 
- def calculate_loyalty(loyalty_input)
-    @intelligence = loyalty_input.sum
+  def Wizard.calculate_loyalty(loyalty_input)
+    @loyalty = loyalty_input.sum
   end
 
 end 
