@@ -1,6 +1,6 @@
 module Dialog
-  def Dialog.aintro_text
-    intro_strings = ["\n\nWelcome to Ollivander's Wonderful Wizarding Wand Emporium!", "\n...It is often said that the wand chooses the wizard...", "...provide answers to these questions...", "...and a wand may reveal itself to you...", "\nPlease press RETURN to introduce yourself."]   
+  def Dialog.intro_text
+    intro_strings = ["\n\nWelcome to Ollivander's Wonderful Wizarding Wand Emporium!", "\n...It is often said that the wand chooses the wizard...", "...provide answers to these questions...", "...and a wand may reveal itself to you...", "\nPlease press RETURN to introduce yourself."]
     intro_strings.each do |string|
       puts string
       sleep(1)
@@ -18,13 +18,13 @@ module Dialog
   end
 
   def Dialog.dialog_snippet(number)
-    puts ""  
+    puts ""
     number.times do
       puts random_text_short
       sleep(1)
     end
     puts random_text_long
-    sleep(4)
+    sleep(3)
     system 'clear'
   end
 end

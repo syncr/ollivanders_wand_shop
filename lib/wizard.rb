@@ -13,7 +13,7 @@ class Wizard
   end
 
   def Wizard.intelligence
-    @intelligence 
+    @intelligence
   end
 
   def Wizard.loyalty
@@ -36,7 +36,7 @@ class Wizard
     @loyalty = loyalty_input.sum
   end
 
-end 
+end
 
 # newWizard = Wizard.new("Mikey")
 # print newWizard.name
