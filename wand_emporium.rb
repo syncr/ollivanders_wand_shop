@@ -36,6 +36,14 @@ def ui_questions
 end
 
 def ui_wand_selector
+
+  case Wizard.score
+    when 300..501 then puts "good"
+    when 500..700 then puts "better"
+    when 701..900 then puts "best"
+    else
+    puts "either great or poor"
+end
   puts "wis: #{@wisdom_score}, int: #{@intelligence_score}, loy: #{@loyalty_score}"
   puts Wizard.score
 end
