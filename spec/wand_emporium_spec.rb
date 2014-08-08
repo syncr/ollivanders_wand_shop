@@ -48,7 +48,6 @@ describe Wizard do
     Wizard.calculate_loyalty("Yellow")
     expect(Wizard.score).to eq(1908)
   end
-
 end
 
 

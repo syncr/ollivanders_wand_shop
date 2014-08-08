@@ -1,5 +1,6 @@
 require './lib/wizard'
 require './lib/wand'
+require './lib/dialog_module'
 require 'pry'
 
 def intro_text
@@ -33,7 +34,7 @@ end
 
 def ui_welcome
   system 'clear'
-  intro_text
+  Dialog.intro_text
   gets.chomp
   
   ui_questions
