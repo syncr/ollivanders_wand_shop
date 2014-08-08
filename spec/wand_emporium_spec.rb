@@ -40,6 +40,15 @@ describe Wizard do
     Wizard.calculate_loyalty("Yellow")
     expect(Wizard.loyalty).to eq(636)
   end
+
+  it 'wisdom value' do
+    sample_wizard = Wizard.new("Mikey")
+    Wizard.calculate_wisdom("Yellow")
+    Wizard.calculate_intelligence("Yellow")
+    Wizard.calculate_loyalty("Yellow")
+    expect(Wizard.score).to eq(1908)
+  end
+
 end
 
 

@@ -49,19 +49,18 @@ def ui_questions
 
   puts "So, tell me #{instance.name}, what is it that is most precious to you?"
   wisdom_input = gets.chomp
-  @wisdom_score = instance.calculate_wisdom(wisdom_input)
+  @wisdom_score = Wizard.calculate_wisdom(wisdom_input)
   dialog_snippet(2)
 
   puts "\n...and would you rather have wealth or power?"
   intelligence_input = gets.chomp
-  @intelligence_score = instance.calculate_intelligence(intelligence_input)
+  @intelligence_score = Wizard.calculate_intelligence(intelligence_input)
   dialog_snippet(3)
 
   puts "\n...who is your greatest inspiration?"
   loyalty_input = gets.chomp
-  @@loyalty_score = instance.calculate_loyalty(loyalty_input)
+  @loyalty_score = Wizard.calculate_loyalty(loyalty_input)
   dialog_snippet(4)
-  
   ui_wand_selector
 end
 

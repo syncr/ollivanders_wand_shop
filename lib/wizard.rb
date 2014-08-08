@@ -1,13 +1,11 @@
 class Wizard
+  attr_accessor :name, :score
   def initialize(name)
     @name = name
     @wisdom
     @intelligence
     @loyalty
-  end
-
-  def Wizard.score
-    @score 
+    @score
   end
 
   def Wizard.wisdom
@@ -20,6 +18,10 @@ class Wizard
 
   def Wizard.loyalty
     @loyalty
+  end
+
+  def Wizard.score
+    @score = @wisdom+@intelligence+@loyalty
   end
 
   def Wizard.calculate_wisdom(wisdom_input)
