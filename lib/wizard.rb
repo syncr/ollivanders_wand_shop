@@ -37,7 +37,3 @@ class Wizard
   end
 
 end
-
-# newWizard = Wizard.new("Mikey")
-# print newWizard.name
-# print Wizard.calculate_wisdom("Yellow")

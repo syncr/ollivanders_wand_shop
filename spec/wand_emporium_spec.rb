@@ -72,15 +72,14 @@ describe Wand do
   describe 'wood selection'do
     it 'method to select wood' do
       sample_wand = Wand.new()
-      expect(sample_wand.select_creature).to be_a String
+      expect(sample_wand.select_wood).to be_a String
     end
   end
 
   describe 'creature selection'do
-    it 'method to select creature' do
+    it 'method to select core' do
       sample_wand = Wand.new()
-      expect(sample_wand.select_creature).to be_a String
+      expect(sample_wand.select_core).to be_a String
     end
   end
 end
-#empty line for GIT

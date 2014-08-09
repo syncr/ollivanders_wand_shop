@@ -12,13 +12,14 @@ end
 
 def ui_questions
   system 'clear'
-  puts "What is your Wizard name?"
+  puts "\nWhat is your Wizard name?"
   name = gets.chomp
-  instance = Wizard.new(name)
+  @instance = Wizard.new(name)
 
-  puts "\nGreetings #{instance.name}. I've been expecting you for some time."
-
-  puts "So, tell me #{instance.name}, what is it that is most precious to you?"
+  puts "\nGreetings #{@instance.name}. I've been expecting you for some time."
+  sleep(3)
+  system 'clear'
+  puts "\nSo, tell me #{@instance.name}, what is it that is most precious to you?"
   wisdom_input = gets.chomp
   @wisdom_score = Wizard.calculate_wisdom(wisdom_input)
   Dialog.dialog_snippet(2)
@@ -37,31 +38,38 @@ end
 
 def ui_wand_selector
   system 'clear'
-  puts "I've considered your responses, but these decisions can take some time. Please be patient as I discuss you with the wands."
+  puts "\nI've considered your responses, but these decisions can take some time. Please be patient as I discuss you with the wands."
   50.times do |i|
     print "."
     sleep(0.05)
   end
-  case Wizard.score
-    when 0..299 then puts "Oh. Dreadful. It appears you may actually be a muggle. I'll have to call security."
-    when 300..501 then puts "good" #1
-    when 500..700 then puts "better" #2
-    when 701..900 then puts "best" #3
-    when 901..1100 then puts "good" #4
-    when 1301..1500 then puts "better" #5
-    when 1501..1700 then puts "best" #6
-    when 1701..1900 then puts "best" #7
-    when 1901..2100 then puts "best" #8
-    when 2101..2300 then puts "best" #9
-    else puts "Stupendous. Your power rivals the greatest wizards of all time. Perhaps someday you might even challenge the theories of Parlathanx the Bold! What an honor for this shop. Please come back anytime."
-    puts
+  system 'clear'
+  puts "\n\n"
+  case Wizard.score  
+    when     0..499 then 
+        puts "Well, isn't this dreadful. It appears you may actually be a muggle. Please stand still for a moment...\nYes, that's it...\n\nSTUPEFY!."
+        exit
+    when   500..801 then your_wand = Wand.deliver_wand(1)
+        puts "Well to be honest, this #{your_wand.length} inch #{your_wand.wood} wand with a core of #{your_wand.core} isn't a very impressive specimen but really, it is quite well suited to you."
+    when  800..1100 then your_wand = Wand.deliver_wand(2)
+        puts "Well to be honest, this #{your_wand.length} inch #{your_wand.wood} wand with a core of #{your_wand.core} isn't a very impressive specimen but really, it is quite well suited to you."
+    when 1101..1400 then your_wand = Wand.deliver_wand(3)
+        puts "Well to be honest, this #{your_wand.length} inch #{your_wand.wood} wand with a core of #{your_wand.core} isn't a very impressive specimen but really, it is quite well suited to you."
+    when 1401..1700 then your_wand = Wand.deliver_wand(4)
+        puts "A solid specimen. Good for charms, enchanting, and other non-battle magics. A fine #{your_wand.length} inch #{your_wand.wood} wand with a core of #{your_wand.core}. It is quite well suited to your average talents."
+    when 1701..2000 then your_wand = Wand.deliver_wand(5)
+        puts "A solid specimen. Good for charms, enchanting, and other non-battle magics. A fine #{your_wand.length} inch #{your_wand.wood} wand with a core of #{your_wand.core}. It is quite well suited to your average talents."
+    when 2001..2300 then your_wand = Wand.deliver_wand(6)
+        puts "A solid specimen. Good for charms, enchanting, and other non-battle magics. A fine #{your_wand.length} inch #{your_wand.wood} wand with a core of #{your_wand.core}. It is quite well suited to your average talents."
+    when 2301..2600 then your_wand = Wand.deliver_wand(7)
+        puts "A lovely and capable #{your_wand.length} inch #{your_wand.wood} wand with a core of #{your_wand.core}. It is quite well suited to your impressive talents. Well suited to most any kind of magic and should serve you quite well!"
+    when 2601..2900 then your_wand = Wand.deliver_wand(8)
+        puts "A lovely and capable #{your_wand.length} inch #{your_wand.wood} wand with a core of #{your_wand.core}. It is quite well suited to your impressive talents. Well suited to most any kind of magic and should serve you quite well!"
+    when 2901..3200 then your_wand = Wand.deliver_wand(9)
+        puts "A lovely and capable #{your_wand.length} inch #{your_wand.wood} wand with a core of #{your_wand.core}. It is quite well suited to your impressive talents. Well suited to most any kind of magic and should serve you quite well!"
+    else your_wand = Wand.deliver_wand(10) 
+        puts "\nWell, isn't this stupendous. It would seem that your power rivals the greatest wizards of our time. Perhaps someday you might even challenge the theories of Parlathanx the Bold! This #{your_wand.length} inch #{your_wand.wood} wand with a core of #{your_wand.core} is among the most specatcular I've ever made and it is quite well suited to your most-impressive talents."
+    end
+    puts "\nThank you for your patronage. Enjoy Hogwarts and visit my shop anytime."
   end
-
-  puts "wis: #{@wisdom_score}, int: #{@intelligence_score}, loy: #{@loyalty_score}"
-  puts Wizard.score
-end
 ui_welcome
-
-
-
-#empty line for GIT
