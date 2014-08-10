@@ -13,7 +13,7 @@ module Dialog
   end
 
   def Dialog.random_text_short
-    short_strings = ["...hmm...", "Yes...", "Yes. I see...", "Of course...", "...very interesting...", "Hmm...well, alright", "...peculiar...", "Oh....", "Ahh...", "...interesting...", "Hmmmmmmm..."]
+    short_strings = ["...hmm...", "Yes...", "Yes. I see...", "Of course...", "...very interesting...", "Hmm...well, alright", "A bit peculiar...", "Oh....", "Ahh...", "...interesting...", "Hmmmmmmm..."]
     short_strings.sample
   end
 

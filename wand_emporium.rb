@@ -47,7 +47,13 @@ def ui_wand_selector
   puts "\n\n"
   case Wizard.score  
     when     0..499 then 
-        puts "Well, isn't this dreadful. It appears you may actually be a muggle. Please stand still for a moment...\nYes, that's it...\n\nSTUPEFY!."
+        puts "Well, isn't this dreadful. It appears you may actually be a muggle. \nPlease stand still for a moment...\n"
+        sleep(1)
+        puts "Yes, that's it...\n\n"
+        sleep(1)
+        puts "STUPEFY!."
+        sleep(3)
+        puts "After what seems like only a few seconds you awake somewhere on the streets of London. You can't remember the pub, but you surely had quite a bender last night."
         exit
     when   500..801 then your_wand = Wand.deliver_wand(1)
         puts "Well to be honest, this #{your_wand.length} inch #{your_wand.wood} wand with a core of #{your_wand.core} isn't a very impressive specimen but really, it is quite well suited to you."
@@ -71,5 +77,6 @@ def ui_wand_selector
         puts "\nWell, isn't this stupendous. It would seem that your power rivals the greatest wizards of our time. Perhaps someday you might even challenge the theories of Parlathanx the Bold! This #{your_wand.length} inch #{your_wand.wood} wand with a core of #{your_wand.core} is among the most specatcular I've ever made and it is quite well suited to your most-impressive talents."
     end
     puts "\nThank you for your patronage. Enjoy Hogwarts and visit my shop anytime."
+    puts "\n\n ...and with that, Mr. Ollivander scoots you out the door and into the throngs of young wizards shopping in Diagon Alley."
   end
 ui_welcome

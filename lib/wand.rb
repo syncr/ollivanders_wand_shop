@@ -39,7 +39,7 @@ class Wand
       new_wand = Wand.new()
       new_wand.save
     end
-    @@store.sort! { |a,b| b.power <=> a.power }
+    @@store.sort! {|a,b| b.power <=> a.power}
   end
 
   def Wand.deliver_wand(level)
