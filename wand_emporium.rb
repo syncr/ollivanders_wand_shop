@@ -4,6 +4,7 @@ require './lib/dialog_module'
 require 'pry'
 
 def ui_welcome
+  Wand.generate_wands
   system 'clear'
   Dialog.intro_text
   gets.chomp
@@ -78,5 +79,6 @@ def ui_wand_selector
     end
     puts "\nThank you for your patronage. Enjoy Hogwarts and visit my shop anytime."
     puts "\n\n ...and with that, Mr. Ollivander scoots you out the door and into the throngs of young wizards shopping in Diagon Alley."
+    puts "\n"
   end
 ui_welcome

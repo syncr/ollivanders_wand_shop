@@ -12,8 +12,6 @@ class Wand
   def initialize
     select_wood
     select_core
-    # @wood = @wood_array.sample
-    # @core = @core_array.sample
     @length = 5 + rand(9)
     @power = 1 + rand(10)
   end
@@ -45,6 +43,5 @@ class Wand
   def Wand.deliver_wand(level)
     @@store.find {|wand| wand.power == level}
   end
-
 end
-Wand.generate_wands
+
